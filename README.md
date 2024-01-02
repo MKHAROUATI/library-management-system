@@ -40,21 +40,21 @@ Copy code
 pip install -r requirements.txt
 Apply Migrations:
 
-```bash
+
 Copy code
 python manage.py migrate
 Create a Superuser:
 
-```bash
+
 Copy code
 python manage.py createsuperuser
 Run the Development Server:
 
-```bash
 Copy code
 python manage.py runserver
 Access the Application:
 Open your web browser and go to http://localhost:8000/admin/ to log in with the superuser credentials and manage the application.
+```
 
 Usage
 ##Admin Dashboard:
