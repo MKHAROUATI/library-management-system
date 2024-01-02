@@ -56,30 +56,30 @@ Access the Application:
 Open your web browser and go to http://localhost:8000/admin/ to log in with the superuser credentials and manage the application.
 ```
 
-Usage
-##Admin Dashboard:
+## Usage
+1. Admin Dashboard:
 
 Log in to the admin dashboard using the superuser credentials.
 Manage books, categories, customers, reservations, and deleted reservations.
-##Book Management:
+2. Book Management:
 
 Add new books with details like name, author, description, quantity, image, language, and category.
 Edit or delete existing books.
-##Category Management:
+3. Category Management:
 
 Create, edit, or delete book categories.
-##Customer Management:
+4. Customer Management:
 
 Add new customers with details like full name, phone number, grade, and email.
 Ensure each customer has a unique email address.
-Reservation System:
+5. Reservation System:
 
 Create reservations for customers, specifying the reserved books.
 View and manage existing reservations.
 Deleting a reservation updates the book quantity and availability status.
 Deleted Reservation History:
 
-View a history of deleted reservations, including details about the customer, user, reserved books, and deletion date.
+6. View a history of deleted reservations, including details about the customer, user, reserved books, and deletion date.
 Contributing
 If you would like to contribute to the development of this project, please follow the standard Git workflow:
 
