@@ -1,36 +1,38 @@
-Library Management System Readme
-Overview
+# Library Management System Readme
+
+## Overview
+
 The Library Management System is a Django-based web application designed to manage a library's book inventory, customer information, and reservations. The system provides a user-friendly interface for library administrators to efficiently handle book transactions, track inventory, and manage customer data.
 
-Features
-Book Management:
+## Features
 
-Add, edit, and delete books in the library inventory.
-Assign books to different categories.
-Track the quantity of each book and its availability status.
-Category Management:
+1. **Book Management:**
+   - Add, edit, and delete books in the library inventory.
+   - Assign books to different categories.
+   - Track the quantity of each book and its availability status.
 
-Create and manage book categories with names and optional descriptions.
-Customer Management:
+2. **Category Management:**
+   - Create and manage book categories with names and optional descriptions.
 
-Maintain a database of customers with their full name, phone number, grade, and email.
-Ensure unique email addresses for each customer.
-Reservation System:
+3. **Customer Management:**
+   - Maintain a database of customers with their full name, phone number, grade, and email.
+   - Ensure unique email addresses for each customer.
 
-Allow customers to reserve books.
-Track reservations with details such as the customer, reserved books, and reservation dates.
-Automatically update the book quantity and availability status when reservations are made or canceled.
-Deleted Reservation History:
+4. **Reservation System:**
+   - Allow customers to reserve books.
+   - Track reservations with details such as the customer, reserved books, and reservation dates.
+   - Automatically update the book quantity and availability status when reservations are made or canceled.
 
-Keep a record of deleted reservations in a separate history table.
-Include details like the customer, user, reserved books, and deletion date.
-Installation
-Clone the Repository:
+5. **Deleted Reservation History:**
+   - Keep a record of deleted reservations in a separate history table.
+   - Include details like the customer, user, reserved books, and deletion date.
 
-bash
-Copy code
-git clone https://github.com/your_username/library-management-system.git
-cd library-management-system
+## Installation
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/your_username/library-management-system.git
+   cd library-management-system
 Install Dependencies:
 
 bash
