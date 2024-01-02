@@ -61,17 +61,21 @@ Open your web browser and go to http://localhost:8000/admin/ to log in with the 
 
 Log in to the admin dashboard using the superuser credentials.
 Manage books, categories, customers, reservations, and deleted reservations.
+
 2. Book Management:
 
 Add new books with details like name, author, description, quantity, image, language, and category.
 Edit or delete existing books.
+
 3. Category Management:
 
 Create, edit, or delete book categories.
+
 4. Customer Management:
 
 Add new customers with details like full name, phone number, grade, and email.
 Ensure each customer has a unique email address.
+
 5. Reservation System:
 
 Create reservations for customers, specifying the reserved books.
@@ -81,9 +85,10 @@ Deleted Reservation History:
 
 6. View a history of deleted reservations, including details about the customer, user, reserved books, and deletion date.
 Contributing
+
 If you would like to contribute to the development of this project, please follow the standard Git workflow:
 
-##Fork the repository.
+Fork the repository.
 Create a new branch for your feature or bug fix.
 Commit your changes and push the branch to your fork.
 Submit a pull request with a clear description of your changes.
