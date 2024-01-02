@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock title %}
+
+
+
+
+
+{% block content %}
+
+<a href="{% url 'add_reservation' %}" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i> Add Reservation</a>
+</br>
+<div class="card">
+    <div class="card-header">
+      Reservations
+    </div>
+    <div class="card-body">
+        <table class="table " style="border-collapse: collapse;">
+            <thead class="table table-dark table-striped">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Customer</th>
+                <th scope="col">Book</th>
+                <th scope="col">Date de Reservation</th>
+                <th scope="col" colspan="3">Operations</th>
+              </tr>
+            </thead>
+            <tbody class="h6">
+                {% for reservation in reservations %}
+              <tr>
+                <td style="text-align: center;vertical-align: middle;border: 1px solid #dddddd;" scope="row"><b>{{ forloop.counter }}</b></th>
+                <td style="text-align: center; vertical-align: middle;border: 1px solid #dddddd;">{{ reservation.customer.grade }} {{ reservation.customer.full_name }} | {{ reservation.customer.phone_number }}</td>
+                <td style="vertical-align: middle;">
+                  {% for available_book in reservation.book.all %} 
+                  <b>Book Name :</b> {{ available_book.name }} 
+                      
+                </br> <b>Category Book Name :</b>
+
+
+                              {% for category in available_book.book_category.all %}
+                                {{ category.name }} |  
+                              
+                              {% endfor %} 
+
+                          
+                              {% if not forloop.last %}  {# Check if it's not the last iteration #}
+                              <hr style="border: 1px solid black;">
+                          {% endif %}
+           {% endfor %}
+  </td>
+              <td style="text-align: center; vertical-align: middle;border: 1px solid #dddddd;">{{ reservation.created_at|date:"d/m/Y H:i:s" }}</td>
+              <td style="text-align: center; vertical-align: middle;border: 1px solid #dddddd;"><a href="{% url 'edit_reservation' reservation.id %}" class="btn btn-primary"><i class="fa-solid fa-pen-nib fa-sm" style="color: #ffffff;"></i></a></td>
+              <td style="text-align: center; vertical-align: middle;border: 1px solid #dddddd;"><a href="{% url 'print_reservation' reservation.id %}" class="btn btn-success"><i class="fa-solid fa-print fa-sm" style="color: #ffffff;"></i></a></td>
+              <td style="text-align: center; vertical-align: middle;border: 1px solid #dddddd;"><a href="{% url 'delete_reservation' reservation.id %}" class="btn btn-danger"><i class="fa-solid fa-trash fa-sm" style="color: #ffffff;"></i></a></td>
+              </tr>
+             {% endfor %}
+            </tbody>
+          </table>
+    </div>
+  </div>
+    
+    
+   
+ 
+
+
+{% endblock content %}

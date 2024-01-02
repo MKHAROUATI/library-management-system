@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Cart Page{% endblock title %}
+
+
+
+
+
+{% block content %}
+
+<div class="card">
+    <div class="card-header">
+      Cart 
+    </div>
+    <div class="card-body">
+        {% if books %}
+        <table class="table ">
+            <thead class="table table-dark table-striped">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Book Name</th>
+                <th scope="col">Book Author</th>
+                <th scope="col">Book Quantity</th>
+                <th scope="col" colspan="2">Operations</th>
+              </tr>
+            </thead>
+            <tbody class="h6">
+                {% for book in books %}
+              <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ book.name }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.quantity }}</td>
+                <td><a href="{% url 'delete_from_cart' book.id%}" class="btn btn-danger"><i class="fa-solid fa-trash fa-sm" style="color: #ffffff;"></i></a></td>
+              </tr>
+             {% endfor %}
+            </tbody>
+          </table>
+
+          <a href="{% url 'add_reservation' %}" class="btn btn-dark"><i class="fa-solid fa-money-check-dollar fa-sm" style="color: #ffffff;"></i> Proceed to Reservation</a>
+
+
+          {% else %}
+            <h1>No Books in the Cart</h1>
+
+          {% endif %}
+    </div>
+  </div>
+
+
+
+
+
+
+{% endblock content %}

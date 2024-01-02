@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %} Edit New Reservation {% endblock title %}
+
+
+
+
+
+{% block content %}
+
+
+<div class="card mb-3">
+    <div class="row g-0 justify-content-center mt-3 align-items-center text-center">
+        <h1>Edit New Reservation</h1>
+    </div>
+        <form method="POST" action="" style="padding: 4rem;">
+            
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="form-control btn btn-success mt-3"><i class="fa-solid fa-plus"></i> Update</button>
+        </form>
+    
+</div>
+
+
+
+
+{% endblock content %}

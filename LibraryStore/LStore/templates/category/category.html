@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock title %}
+
+
+
+
+
+{% block content %}
+
+<a href="{% url 'add_category' %}" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i> Add Category</a>
+</br>
+<div class="card">
+    <div class="card-header">
+      Categories
+    </div>
+    <div class="card-body">
+        <table class="table " style="border-collapse: collapse;">
+            <thead class="table table-dark table-striped">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Category Name</th>
+                <th scope="col">Category Description</th>
+                <th scope="col">created_at</th>
+                <th scope="col" colspan="2">Operations</th>
+              </tr>
+            </thead>
+            <tbody class="h6">
+                {% for category in categories %}
+              <tr>
+                <td style="text-align: center;vertical-align: middle;border: 1px solid #dddddd;" scope="row"><b>{{ forloop.counter }}</b></th>
+                <td style="text-align: center; vertical-align: middle;border: 1px solid #dddddd;">{{ category.name }}</td>
+                <td style="text-align: center; vertical-align: middle;border: 1px solid #dddddd;">{{ category.description }}</td>
+                <td style="text-align: center; vertical-align: middle;border: 1px solid #dddddd;">{{ category.created_at|date:"d/m/Y H:i:s" }}</td>
+
+              <td style="text-align: center; vertical-align: middle;border: 1px solid #dddddd;"><a href="{% url 'edit_category' category.id %}" class="btn btn-primary"><i class="fa-solid fa-pen-nib fa-sm" style="color: #ffffff;"></i></a></td>
+              <td style="text-align: center; vertical-align: middle;border: 1px solid #dddddd;"><a href="{% url 'delete_category' category.id %}" class="btn btn-danger"><i class="fa-solid fa-trash fa-sm" style="color: #ffffff;"></i></a></td>
+              </tr>
+             {% endfor %}
+            </tbody>
+          </table>
+    </div>
+  </div>
+    
+    
+   
+ 
+
+
+{% endblock content %}
